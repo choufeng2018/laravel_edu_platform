@@ -21,8 +21,16 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 // 后台路由部分(需要权限判断)
-Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'checkrbac']], function () {
     // 后台首页路由
     Route::get('index/index', 'Admin\IndexController@index');
     Route::get('index/welcome', 'Admin\IndexController@welcome');
+    // 管理员的管理模块
+    Route::get('manager/index', 'Admin\ManagerController@index');
+    // 权限的管理模块
+    Route::get('auth/index', 'Admin\AuthController@index');
+    Route::any('auth/add', 'Admin\AuthController@add');
+    // 角色的管理模块
+    Route::get('role/index', 'Admin\RoleController@index');
+    Route::any('role/assign', 'Admin\RoleController@assign');
 });

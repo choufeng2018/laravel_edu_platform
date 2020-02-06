@@ -61,6 +61,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        // 后续自定义中间件可以在这里注册，形式参考上述
+        'checkrbac' => \App\Http\Middleware\CheckRbac::class,
     ];
 
     /**
