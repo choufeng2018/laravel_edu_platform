@@ -64,6 +64,21 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        'qiniu' => [
+            'driver'  => 'qiniu',
+            'domains' => [
+                'default'   => 'q5dv3r5b0.bkt.clouddn.com', //你的七牛域名
+                'https'     => '',         //你的HTTPS域名
+                'custom'    => '',                //Useless 没啥用，请直接使用上面的 default 项
+            ],
+            'access_key'=> 'Nx0h1k9vo6Soj8rlKu3QcZ_OcWLHq2bRW2Whp6YK',  //AccessKey
+            'secret_key'=> '7dSgE7byJQVZl5GMkcZULKVDkFyQLyp7KrubUv5L',  //SecretKey
+            'bucket'    => 'laravel-edu-platform',  //Bucket名字
+            'notify_url'=> '',  //持久化处理回调地址
+            'access'    => 'public',  //空间访问控制 public 或 private
+            'hotlink_prevention_key' => '', // CDN 时间戳防盗链的 key。 设置为 null 则不启用本功能。
+//            'hotlink_prevention_key' => 'cbab68a279xxxxxxxxxxab509a', // 同上，备用
+        ],
     ],
 
 ];
