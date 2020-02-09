@@ -39,4 +39,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'checkrbac']],
     Route::post('uploader/webuploader', 'Admin\UploaderController@webuploader');  // 异步上传
     Route::post('uploader/qiniu', 'Admin\UploaderController@qiniu');  // 七牛上传
     Route::get('member/getareabyid', 'Admin\MemberController@getAreaById');  // ajax联动
+    // 专业分类与专业的管理
+    Route::get('protype/index', 'Admin\ProtypeController@index');  // 列表
+    Route::get('profession/index', 'Admin\ProfessionController@index');  // 列表
+
 });
